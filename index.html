@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>lele nananinu</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Quicksand:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#e4e2de", "surface-container": "#efeeea", "tertiary": "#835200", "background": "#fbf9f5", "outline-variant": "#e1bec6", "on-primary-fixed": "#3f001c", "on-primary": "#ffffff", "on-primary-container": "#fffdff", "primary-fixed": "#ffd9e2", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#653e00", "on-secondary-fixed-variant": "#891933", "surface-variant": "#e4e2de", "on-primary-fixed-variant": "#8e0048", "surface-dim": "#dbdad6", "on-background": "#1b1c1a", "primary-container": "#db2777", "surface-container-lowest": "#ffffff", "outline": "#8d6f77", "inverse-surface": "#30312e", "on-tertiary-fixed": "#2a1700", "on-secondary-container": "#730425", "surface": "#fbf9f5", "on-secondary-fixed": "#400010", "tertiary-fixed": "#ffddb8", "primary": "#b7005e", "inverse-on-surface": "#f2f0ed", "on-surface-variant": "#594047", "on-error-container": "#93000a", "secondary-container": "#fe7488", "secondary-fixed": "#ffdadc", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#ffb95f", "primary-fixed-dim": "#ffb1c7", "error-container": "#ffdad6", "on-surface": "#1b1c1a", "tertiary-container": "#a46800", "surface-container-high": "#eae8e4", "secondary-fixed-dim": "#ffb2b9", "secondary": "#a93349", "surface-container-low": "#f5f3ef", "inverse-primary": "#ffb1c7", "on-tertiary-container": "#fffdff", "surface-bright": "#fbf9f5", "on-error": "#ffffff", "surface-tint": "#ba0060" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.75rem", "space-xl": "2rem", "margin-mobile": "1.25rem", "gutter-mobile": "1rem", "space-2xs": "0.25rem", "space-2xl": "3rem", "space-xs": "0.5rem" }, "fontFamily": { "body-lg": ["Quicksand"], "headline-md": ["Playfair Display"], "label-lg": ["Quicksand"], "label-sm": ["Quicksand"], "display-lg-mobile": ["Playfair Display"], "display-lg": ["Playfair Display"], "title-script": ["Playfair Display"], "body-sm": ["Quicksand"], "body-md": ["Quicksand"], "headline-lg": ["Playfair Display"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "0", "fontWeight": "500" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "title-script": ["20px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "0", "fontWeight": "600" }] } } } };</script>
+<style>
+@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;background-color:#fbf9f5;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+@keyframes sakura-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--petal-opacity, 0.85);
+  }
+  50% {
+    transform: translate3d(var(--sway-x, 40px), 50vh, 0) rotate(180deg) scale(1);
+  }
+  85% {
+    opacity: var(--petal-opacity, 0.85);
+  }
+  100% {
+    transform: translate3d(calc(var(--sway-x, 40px) * -0.75), 112vh, 0) rotate(360deg) scale(0.85);
+    opacity: 0;
+  }
+}
+.sakura-petal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 35;
+  user-select: none;
+  will-change: transform, opacity;
+  animation-name: sakura-fall;
+  animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed">
+<svg aria-hidden="true" class="inline-defs-container" style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+<!-- Continuous Falling Petals Layer -->
+<div class="fixed inset-0 pointer-events-none z-30 overflow-hidden" id="sakura-container"></div>
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" id="bg-fixed-layer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100lvh; min-height: 100vh; transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);"><img alt="Our Memories Collage" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none filter contrast-[1.02] brightness-[0.98]" src="foto/collage_background.jpg"/><div class="absolute inset-0 bg-surface/75 backdrop-blur-[1.5px]"></div><div class="absolute inset-0 bg-gradient-to-b from-primary/15 via-surface/40 to-surface/90"></div></div><script>(function(){function lockBg(){var bg=document.getElementById("bg-fixed-layer");if(bg){var h=Math.max(window.screen.height,window.innerHeight,screen.availHeight||0);bg.style.height=h+"px";}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",lockBg);}else{lockBg();}window.addEventListener("orientationchange",function(){setTimeout(lockBg,200);});})();</script><main class="flex-1 flex flex-col relative w-full max-w-[480px] mx-auto px-margin-mobile pt-safe pb-safe"><div class="flex flex-col w-full relative pb-28 gap-y-8 select-none">
+<!-- Interactive Floating Heart Particle Canvas Layer -->
+<div class="fixed inset-0 pointer-events-none z-50 overflow-hidden" id="heart-burst-container"></div>
+<!-- ================= SECTION 1: HERO SCRAPBOOK ================= -->
+<section class="relative w-full flex flex-col items-center justify-center py-6 select-none">
+<div class="relative group cursor-pointer transition-transform duration-300 active:scale-95 flex items-center justify-center w-[190px] sm:w-[230px] md:w-[270px] aspect-square mx-auto" id="hero-heart-badge">
+<!-- Soft ambient glowing aura behind heart -->
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary via-secondary-container to-primary-fixed rounded-full blur-2xl opacity-40 pointer-events-none"></div>
+<!-- Responsive Vector Heart with Dense R & D Fill Pattern & Monogram -->
+<svg class="relative w-full h-full drop-shadow-md overflow-visible" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="heartBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#fe7488"></stop>
+<stop offset="50%" stop-color="#db2777"></stop>
+<stop offset="100%" stop-color="#b7005e"></stop>
+</lineargradient>
+<lineargradient id="heartBorderGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"></stop>
+<stop offset="50%" stop-color="#ffd9e2" stop-opacity="0.6"></stop>
+<stop offset="100%" stop-color="#ffb1c7" stop-opacity="0.8"></stop>
+</lineargradient>
+<!-- Dense scattered R and D pattern with varying rose, pink, blush, white tones -->
+<pattern height="12" id="denseRDPattern" patterntransform="rotate(18)" patternunits="userSpaceOnUse" width="12">
+<text fill="#ffffff" font-family="'Quicksand', sans-serif" font-size="3.2" font-weight="700" opacity="0.55" x="2" y="4.5">R</text>
+<text fill="#ffd9e2" font-family="'Quicksand', sans-serif" font-size="3" font-weight="600" opacity="0.42" x="7.5" y="4.5">D</text>
+<text fill="#ffb1c7" font-family="'Quicksand', sans-serif" font-size="2.8" font-weight="700" opacity="0.45" x="1" y="10.5">D</text>
+<text fill="#fffdff" font-family="'Quicksand', sans-serif" font-size="3.3" font-weight="700" opacity="0.6" x="6.5" y="10.5">R</text>
+<circle cx="11" cy="1" fill="#ffffff" opacity="0.45" r="0.4"></circle>
+<circle cx="4.5" cy="7" fill="#ffd9e2" opacity="0.5" r="0.35"></circle>
+</pattern>
+<clippath id="heartClip">
+<path d="M50 87 C24 67 10 51 10 33 C10 19 20 10 34 10 C42.5 10 47 14 50 17.5 C53 14 57.5 10 66 10 C80 10 90 19 90 33 C90 51 76 67 50 87 Z"></path>
+</clippath>
+<filter height="140%" id="heartOuterShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="3" flood-color="#730425" flood-opacity="0.2" stddeviation="4"></fedropshadow>
+<fedropshadow dx="0" dy="1" flood-color="#400010" flood-opacity="0.1" stddeviation="1.5"></fedropshadow>
+</filter>
+</defs>
+<!-- Base Heart Base with shadow -->
+<path d="M50 87 C24 67 10 51 10 33 C10 19 20 10 34 10 C42.5 10 47 14 50 17.5 C53 14 57.5 10 66 10 C80 10 90 19 90 33 C90 51 76 67 50 87 Z" fill="url(#heartBgGrad)" filter="url(#heartOuterShadow)"></path>
+<!-- Clipped Dense Pattern Scatter -->
+<g clip-path="url(#heartClip)">
+<rect fill="url(#denseRDPattern)" height="100" width="100" x="0" y="0"></rect>
+<!-- Inner glow and vignette inside heart -->
+<radialgradient cx="50%" cy="45%" id="innerHeartGlow" r="50%">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0.2"></stop>
+<stop offset="70%" stop-color="#db2777" stop-opacity="0"></stop>
+<stop offset="100%" stop-color="#400010" stop-opacity="0.35"></stop>
+</radialgradient>
+<rect fill="url(#innerHeartGlow)" height="100" width="100" x="0" y="0"></rect>
+</g>
+<!-- Crisp Heart Rim Border -->
+<path d="M50 87 C24 67 10 51 10 33 C10 19 20 10 34 10 C42.5 10 47 14 50 17.5 C53 14 57.5 10 66 10 C80 10 90 19 90 33 C90 51 76 67 50 87 Z" fill="none" stroke="url(#heartBorderGrad)" stroke-width="1.5"></path>
+</svg>
+</div>
+</section>
+<!-- ================= SECTION 2: LIVE ANNIVERSARY COUNTER ================= -->
+<section class="flex flex-col gap-3">
+<!-- Header with decorative pill -->
+<div class="flex items-center justify-center text-center w-full px-1"><h2 class="font-headline-md text-lg sm:text-xl md:text-2xl lg:text-3xl text-on-surface text-center font-semibold tracking-tight">25 Januari 2026 itu udah</h2></div>
+<!-- Live Counter Cards Grid -->
+<div class="grid grid-cols-5 gap-2 w-full"><div class="flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-secondary-fixed text-on-secondary-fixed shadow-sm transition-transform active:scale-95"><span class="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-primary leading-none translate-y-[2px]" id="counter-months">7</span><span class="text-[9px] sm:text-[10px] md:text-xs font-semibold text-on-secondary-fixed-variant leading-none mt-1">Bulan</span></div><div class="flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm transition-transform active:scale-95"><span class="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-secondary leading-none translate-y-[2px]" id="counter-days">7</span><span class="text-[9px] sm:text-[10px] md:text-xs font-semibold text-on-surface-variant leading-none mt-1">Hari</span></div><div class="flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm transition-transform active:scale-95"><span class="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-primary-container leading-none translate-y-[2px]" id="counter-hours">16</span><span class="text-[9px] sm:text-[10px] md:text-xs font-semibold text-on-surface-variant leading-none mt-1">Jam</span></div><div class="flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm transition-transform active:scale-95"><span class="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-secondary leading-none translate-y-[2px]" id="counter-minutes">31</span><span class="text-[9px] sm:text-[10px] md:text-xs font-semibold text-on-surface-variant leading-none mt-1">Menit</span></div><div class="flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-primary-container text-on-primary-container shadow-md transition-transform active:scale-95"><span class="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-surface-container-lowest leading-none translate-y-[2px]" id="counter-seconds">48</span><span class="text-[9px] sm:text-[10px] md:text-xs font-semibold text-primary-fixed-dim leading-none mt-1">Detik</span></div></div><div class="w-full flex items-center justify-center text-center mt-0.5"><span class="font-title-script text-sm sm:text-base md:text-lg italic text-primary font-semibold tracking-wide">yang lalu</span></div>
+</section>
+<!-- ================= SECTION 3: UCAPAN BULANAN (REAL INTERACTIVE ENVELOPE) ================= -->
+<section class="relative w-full flex flex-col items-center select-none" id="envelope-section">
+  <!-- 1. ENVELOPE CONTAINER -->
+  <div id="envelope-wrapper" class="relative w-full max-w-[400px] mx-auto cursor-pointer group select-none">
+    <!-- Real Physical Envelope Outer Box -->
+    <div id="envelope-box" class="relative w-full aspect-[16/10.5] min-h-[210px] sm:min-h-[230px] rounded-2xl shadow-xl overflow-visible transition-transform duration-300 group-hover:scale-[1.01] group-active:scale-[0.99]">
+      <!-- Back Wall of Envelope (Inside Color) -->
+      <div class="absolute inset-0 rounded-2xl bg-[#edd6da] border border-primary/15 overflow-hidden shadow-inner">
+        <!-- Inner envelope lining -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#ffe4e6] to-[#fce7f3] opacity-70"></div>
+      </div>
+
+      <!-- KERTAS SURAT YANG MELUNCUR KELUAR DARI DALAM AMPLOP -->
+      <div id="envelope-sliding-letter" class="absolute left-3 right-3 bottom-3 top-3 transition-all duration-700 ease-in-out z-10 pointer-events-none transform translate-y-0 opacity-0">
+        <div class="w-full h-full bg-surface-container-lowest rounded-xl border border-primary/20 shadow-md p-5 flex flex-col items-center justify-center">
+          <div class="w-12 h-1.5 bg-primary/25 rounded-full mb-2"></div>
+          <div class="w-28 h-1 bg-primary/15 rounded-full mb-1"></div>
+          <div class="w-20 h-1 bg-primary/15 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Pocket Fold (Left, Right, Bottom Triangles) via SVG for Crisp Real Fold Look -->
+      <div class="absolute inset-0 z-20 pointer-events-none rounded-2xl overflow-hidden">
+        <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 400 260">
+          <defs>
+            <linearGradient id="pocketBottomGrad" x1="0%" x2="0%" y1="100%" y2="0%">
+              <stop offset="0%" stop-color="#fdf2f4"></stop>
+              <stop offset="100%" stop-color="#fae2e7"></stop>
+            </linearGradient>
+            <linearGradient id="pocketLeftGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#fae1e6"></stop>
+              <stop offset="100%" stop-color="#f6d3db"></stop>
+            </linearGradient>
+            <linearGradient id="pocketRightGrad" x1="100%" x2="0%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#f8d6dc"></stop>
+              <stop offset="100%" stop-color="#f3c8d2"></stop>
+            </linearGradient>
+            <filter height="130%" id="bottomPocketShadow" width="120%" x="-10%" y="-20%">
+              <feDropShadow dx="0" dy="-3" flood-color="#a93349" flood-opacity="0.16" stdDeviation="3"></feDropShadow>
+            </filter>
+          </defs>
+          <!-- Left Triangular Fold -->
+          <polygon fill="url(#pocketLeftGrad)" points="0,0 200,130 0,260"></polygon>
+          <!-- Right Triangular Fold -->
+          <polygon fill="url(#pocketRightGrad)" points="400,0 200,130 400,260"></polygon>
+          <!-- Bottom Triangular Fold (Overlaps Left & Right) -->
+          <polygon fill="url(#pocketBottomGrad)" filter="url(#bottomPocketShadow)" points="0,260 200,120 400,260"></polygon>
+          <!-- Subtle border fold line -->
+          <polyline fill="none" points="0,260 200,120 400,260" stroke="#f472b6" stroke-opacity="0.3" stroke-width="0.75"></polyline>
+        </svg>
+      </div>
+
+      <!-- Top Flap (Lipatan Penutup Atas yang Terbuka ke Atas secara 3D) -->
+      <div id="envelope-top-flap" class="absolute top-0 left-0 right-0 h-[135px] z-30 transition-all duration-700 ease-in-out" style="transform-origin: top center; transform-style: preserve-3d;">
+        <svg class="w-full h-full drop-shadow-[0_4px_6px_rgba(169,51,73,0.18)]" preserveAspectRatio="none" viewBox="0 0 400 135">
+          <defs>
+            <linearGradient id="topFlapGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+              <stop offset="0%" stop-color="#fff1f3"></stop>
+              <stop offset="100%" stop-color="#f9d5de"></stop>
+            </linearGradient>
+          </defs>
+          <polygon fill="url(#topFlapGrad)" points="0,0 400,0 200,135"></polygon>
+          <line stroke="#f472b6" stroke-opacity="0.35" stroke-width="0.75" x1="0" x2="200" y1="0" y2="135"></line>
+          <line stroke="#f472b6" stroke-opacity="0.35" stroke-width="0.75" x1="400" x2="200" y1="0" y2="135"></line>
+        </svg>
+
+        <!-- Stempel Penutup Amplop (Wax Seal) yang Menempel di Ujung Penutup -->
+        <div id="envelope-wax-seal" class="absolute left-1/2 -bottom-4 -translate-x-1/2 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#e11d48] via-[#be123c] to-[#881337] shadow-[0_4px_12px_rgba(190,18,60,0.5),inset_0_2px_4px_rgba(255,255,255,0.45),inset_0_-2px_4px_rgba(0,0,0,0.35)] border-2 border-amber-300/80 flex items-center justify-center transition-all duration-400 pointer-events-none">
+          <span class="text-2xl sm:text-3xl filter drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">💌</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tulisan Instruksi di Luar Amplop -->
+    <div id="envelope-instruction" class="mt-4 text-center transition-opacity duration-300">
+      <span class="text-xs sm:text-sm font-semibold text-primary tracking-wide inline-flex items-center gap-1.5 animate-bounce" style="animation-duration: 2s;">
+        <span>Ketuk amplop untuk membuka..</span>
+        <span>✨</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- 2. KERTAS SURAT LENGKAP SETELAH TERBUKA (SCRAPBOOK NOTE CARD) -->
+  <div id="envelope-opened-letter" class="hidden opacity-0 scale-95 transition-all duration-700 ease-out relative w-full bg-surface-container-lowest/90 backdrop-blur-sm rounded-lg p-6 shadow-2xl flex flex-col gap-4 overflow-hidden rotate-[0.75deg]">
+    <!-- Washi Tape Accents -->
+    <div class="absolute -top-2 left-6 w-20 h-5 bg-secondary-fixed/90 backdrop-blur-sm -rotate-6 shadow-sm"></div>
+    <div class="absolute -top-2 right-8 w-16 h-5 bg-tertiary-fixed/80 backdrop-blur-sm rotate-3 shadow-sm"></div>
+    <div class="flex flex-col gap-1 pt-2">
+      <h3 class="font-headline-lg text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary font-bold leading-tight" id="milestone-greeting">Selamat 7 Bulan, Sayang</h3>
+    </div>
+    <p class="text-xs sm:text-sm md:text-base text-on-surface-variant leading-relaxed font-medium">Terima kasih sudah bertahan sampai sekarang. Maaf kalo aku gabisa banyak berbuat apa-apa buat kamu, gabisa jadi tempat yang meyakinkan. Maaf kalo aku manusia yang rewel &amp; ngeselin yah. Semoga kamu selalu diberi kesehatan dan kebahagiaan.</p>
+    <div class="text-right -mt-1">
+      <span class="font-title-script text-sm sm:text-base italic text-primary font-semibold">~lele</span>
+    </div>
+    <div class="flex items-center justify-between pt-2 border-t border-primary/10">
+      <span class="text-[10px] sm:text-xs font-bold text-outline">#RD</span>
+      <!-- Fold back button -->
+      <button id="btn-fold-letter" type="button" class="cursor-pointer text-[11px] sm:text-xs font-semibold text-primary hover:text-primary-container flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-fixed/30 hover:bg-primary-fixed/50 transition-all active:scale-95">
+        <span>↩ Masukkan kembali ke amplop</span>
+      </button>
+    </div>
+  </div>
+</section>
+<!-- ================= SECTION 4: MUSIK HARI INI ================= -->
+<section class="flex flex-col gap-3"><div class="flex items-center justify-between px-1"><div class="flex items-center gap-2"><span class="text-lg sm:text-xl md:text-2xl">🎶</span><h2 class="font-headline-md text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-on-surface">Musik Hari Ini</h2></div></div><div class="bg-surface-container-lowest/85 backdrop-blur-sm rounded-lg p-4 shadow-md flex flex-col gap-3.5"><div class="flex items-center gap-3"><div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden bg-primary-fixed flex-shrink-0 shadow-inner flex items-center justify-center"><span class="material-symbols-outlined text-xl sm:text-2xl text-primary animate-spin" style="animation-duration: 9s;">album</span><div class="absolute inset-0 bg-primary/10"></div></div><div class="flex flex-col justify-center min-w-0 flex-1 gap-0.5"><h4 class="text-sm sm:text-base md:text-lg text-on-surface truncate font-bold leading-tight" id="active-song-title">Memuat lagu...</h4><p class="text-xs sm:text-sm text-on-surface-variant truncate font-medium leading-normal" id="active-song-artist">Spesial untuk hari ini</p></div></div><div class="w-full rounded-lg overflow-hidden shadow-sm bg-surface-container"><iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="152" id="spotify-embed-frame" loading="lazy" src="" style="border-radius:12px" width="100%"></iframe></div></div></section>
+<!-- ================= SECTION 5: FOOTER KEESPAKE ================= -->
+<footer class="mt-4 flex flex-col items-center text-center gap-3 py-4 relative"><div class="flex items-center justify-center gap-3"><span class="text-xl sm:text-2xl animate-pulse">💖</span><h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide text-primary drop-shadow-sm">Love u</h2><span class="text-xl sm:text-2xl animate-pulse">💖</span></div></footer>
+</div>
+<!-- Client-side Interactive Script for Dynamic Counter & Confetti & Falling Sakura Petals -->
+<script>
+  (function() {
+    // 1. Live Countdown Logic
+    const startDate = new Date('2026-01-25T00:00:00');
+
+    function updateAnniversaryTimer() {
+      const now = new Date();
+      let diffMs = now - startDate;
+
+      const isFuture = diffMs < 0;
+      const absDiff = Math.abs(diffMs);
+
+      // Exact time division calculations
+      const secondsTotal = Math.floor(absDiff / 1000);
+      const minutesTotal = Math.floor(secondsTotal / 60);
+      const hoursTotal = Math.floor(minutesTotal / 60);
+      const daysTotal = Math.floor(hoursTotal / 24);
+
+      // Approximate calendar months & leftover days for display
+      let months = Math.floor(daysTotal / 30.4375);
+      let days = Math.floor(daysTotal % 30.4375);
+      let hours = hoursTotal % 24;
+      let minutes = minutesTotal % 60;
+      let seconds = secondsTotal % 60;
+
+      const elMonths = document.getElementById('counter-months');
+      const elDays = document.getElementById('counter-days');
+      const elHours = document.getElementById('counter-hours');
+      const elMinutes = document.getElementById('counter-minutes');
+      const elSeconds = document.getElementById('counter-seconds');
+      const elGreeting = document.getElementById('milestone-greeting');
+      const elStatus = document.getElementById('counter-status-badge');
+
+      if (elMonths) elMonths.textContent = months;
+      if (elDays) elDays.textContent = days;
+      if (elHours) elHours.textContent = hours;
+      if (elMinutes) elMinutes.textContent = minutes;
+      if (elSeconds) elSeconds.textContent = seconds;
+
+      // Dynamic Greeting update based on computed months
+      if (elGreeting) {
+        if (months <= 0) {
+          elGreeting.textContent = 'Selamat Hari Bahagia, Sayang';
+        } else {
+          elGreeting.textContent = `Selamat ${months} Bulan, Sayang`;
+        }
+      }
+
+      if (elStatus && isFuture) {
+        elStatus.textContent = 'Menuju Hari H ✨';
+      }
+
+      // Sync daily romantic song from 31 songs catalog based on counter days
+      syncDailySong(days, daysTotal);
+    }
+
+    // 31 Daily Romantic Songs Catalog (Automatically matches counter days)
+    const dailyPlaylist = [
+      { day: 1, title: "Every Summertime", artist: "NIKI", id: "68HocO7fx9z0MgDU0ZPHro" },
+      { day: 2, title: "Until I Found You", artist: "Stephen Sanchez", id: "0T5iIrXA4p5GsubkhuBIKV" },
+      { day: 3, title: "Those Eyes", artist: "New West", id: "50x1Ic8CaXkYNvjmxe3WXy" },
+      { day: 4, title: "Glue Song", artist: "beabadoobee", id: "3iBgrkexCzVuPy4O9vx7Mf" },
+      { day: 5, title: "Best Part (feat. H.E.R.)", artist: "Daniel Caesar, H.E.R.", id: "1Q7EgiMOuwDcB0PJC6AzON" },
+      { day: 6, title: "I Like Me Better", artist: "LAUV", id: "1jXfVzMk8cSbvAXMML4Y4f" },
+      { day: 7, title: "Adore You", artist: "Harry Styles", id: "3jjujdWJ72nww5eGnfs2E7" },
+      { day: 8, title: "Sweet Creature", artist: "Harry Styles", id: "5kRPPEWFJIMox5qIkQkiz5" },
+      { day: 9, title: "Lover", artist: "Taylor Swift", id: "1dGr1c8CrMLDpV6mPbImSI" },
+      { day: 10, title: "Daylight", artist: "Taylor Swift", id: "1fzAuUVbzlhZ1lJAx9PtY6" },
+      { day: 11, title: "Nothing", artist: "Bruno Major", id: "1lORkxEMmsCZqhoxcmk3A3" },
+      { day: 12, title: "Easily", artist: "Bruno Major", id: "0RnxpSzxzwZgFQ0NahQr9K" },
+      { day: 13, title: "You Are The Reason", artist: "Calum Scott", id: "69vToJ9BMbbLlFZo7k7A7B" },
+      { day: 14, title: "a thousand years", artist: "Christina Perri", id: "6lanRgr6wXibZr8KgzXxBl" },
+      { day: 15, title: "Perfect", artist: "Ed Sheeran", id: "0tgVpDi06FyKpA1z0VMD4v" },
+      { day: 16, title: "Photograph", artist: "Ed Sheeran", id: "1HNkqx9Ahdgi1Ixy2xkKkL" },
+      { day: 17, title: "Kiss Me", artist: "Sixpence None The Richer", id: "754kgU5rWscRTfvlsuEwFp" },
+      { day: 18, title: "Can't Help Falling in Love", artist: "Elvis Presley", id: "44AyOl4qVkzS48vBsbNXaC" },
+      { day: 19, title: "Just the Way You Are", artist: "Bruno Mars", id: "7BqBn9nzAq8spo5e7cZ0dJ" },
+      { day: 20, title: "Die With A Smile", artist: "Lady Gaga, Bruno Mars", id: "2plbrEY59IikOBgBGLjaoe" },
+      { day: 21, title: "I Get to Love You", artist: "Ruelle", id: "3CV4lFELdziNM1OnHU8nwz" },
+      { day: 22, title: "Turning Page", artist: "Sleeping At Last", id: "2kfGoV9a5dbSKCNmUWH2ZF" },
+      { day: 23, title: "From The Start", artist: "Laufey", id: "43iIQbw5hx986dUEZbr3eN" },
+      { day: 24, title: "Valentine", artist: "Laufey", id: "6cx5CvFhqN19efStehJqoW" },
+      { day: 25, title: "Everywhere, Everything (with Gracie Abrams)", artist: "Noah Kahan, Gracie Abrams", id: "745JbQYxoYIegHzHTUxETp" },
+      { day: 26, title: "You're Still The One", artist: "Shania Twain", id: "1wb4P4F0sxAQ2KXrRvsx6n" },
+      { day: 27, title: "I Won't Give Up", artist: "Jason Mraz", id: "5ivF4eQBqJiVL5IAE9jRyl" },
+      { day: 28, title: "Home (featuring the Gulu Widows Choir)", artist: "Edward Sharpe & The Magnetic Zeros", id: "0cPFDJKfL1CRsIirnN3mgW" },
+      { day: 29, title: "Yellow", artist: "Coldplay", id: "3e0wYnFxkqinmtXebYPMSt" },
+      { day: 30, title: "Until I Found You (with Em Beihold) - Em Beihold Version", artist: "Stephen Sanchez, Em Beihold", id: "1Y3LN4zO1Edc2EluIoSPJN" },
+      { day: 31, title: "Shape of My Heart", artist: "Backstreet Boys", id: "35o9a4iAfLl5jRmqMX9c1D" }
+    ];
+
+    let currentLoadedDayNum = null;
+
+    function getShuffledPlaylist(cycle) {
+      let seed = (cycle * 9301 + 49297) % 233280;
+      function random() {
+        seed = (seed * 9301 + 49297) % 233280;
+        return seed / 233280;
+      }
+      const order = Array.from({ length: dailyPlaylist.length }, (_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      return order;
+    }
+
+    function syncDailySong(counterDays, daysTotal) {
+      const activeDay = typeof daysTotal === 'number' && daysTotal >= 0 ? daysTotal : (counterDays || 0);
+      if (currentLoadedDayNum === activeDay) return;
+      currentLoadedDayNum = activeDay;
+
+      const cycle = Math.floor(activeDay / dailyPlaylist.length);
+      const dayInCycle = activeDay % dailyPlaylist.length;
+      const shuffled = getShuffledPlaylist(cycle + 2026);
+      const songIndex = shuffled[dayInCycle];
+
+      const song = dailyPlaylist[songIndex];
+      const elTitle = document.getElementById('active-song-title');
+      const elArtist = document.getElementById('active-song-artist');
+      const elFrame = document.getElementById('spotify-embed-frame');
+
+      if (elTitle) elTitle.textContent = song.title;
+      if (elArtist) elArtist.textContent = song.artist;
+      if (elFrame) {
+        elFrame.src = `https://open.spotify.com/embed/track/${song.id}?utm_source=generator&theme=0`;
+      }
+    }
+
+    updateAnniversaryTimer();
+    setInterval(updateAnniversaryTimer, 1000);
+
+    // 2. High Frequency Falling Sakura Petals System
+    const sakuraContainer = document.getElementById('sakura-container');
+    const MAX_PETALS = 40;
+    
+    // 1. Sakura Flower & Petal SVGs (Bunga Sakura 5 Kelopak & Kelopak Lekuk Khas)
+    const sakuraPetalSVGs = [
+      // Full 5-Petal Sakura Blossom (Rich Pink)
+      '<svg viewBox="0 0 32 32" width="100%" height="100%"><g fill="#f472b6" opacity="0.95"><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z"/><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z" transform="rotate(72 16 16)"/><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z" transform="rotate(144 16 16)"/><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z" transform="rotate(216 16 16)"/><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z" transform="rotate(288 16 16)"/></g><circle cx="16" cy="16" r="2.5" fill="#fda4af"/><circle cx="16" cy="16" r="1.2" fill="#fbbf24"/></svg>',
+      // Full 5-Petal Sakura Blossom (Soft Pastel Blush)
+      '<svg viewBox="0 0 32 32" width="100%" height="100%"><g fill="#fbcfe8" opacity="0.95"><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z"/><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z" transform="rotate(72 16 16)"/><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z" transform="rotate(144 16 16)"/><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z" transform="rotate(216 16 16)"/><path d="M16 16 C12 10 9 4 13.5 1.2 C14.5 0.5 15.2 2 16 3.2 C16.8 2 17.5 0.5 18.5 1.2 C23 4 20 10 16 16 Z" transform="rotate(288 16 16)"/></g><circle cx="16" cy="16" r="2.5" fill="#f472b6"/><circle cx="16" cy="16" r="1.2" fill="#f59e0b"/></svg>',
+      // Single Notched Sakura Petal (Rose Pink)
+      '<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M12 22 C6 16 3 8 9.5 2.5 C10.8 1.5 11.5 3.5 12 5 C12.5 3.5 13.2 1.5 14.5 2.5 C21 8 18 16 12 22 Z" fill="#f472b6" opacity="0.92"/></svg>',
+      // Single Notched Sakura Petal (Blush Cream Pink)
+      '<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M12 22 C6.5 16 3.5 8 9.5 2.8 C10.8 1.8 11.5 3.5 12 4.8 C12.5 3.5 13.2 1.8 14.5 2.8 C20.5 8 17.5 16 12 22 Z" fill="#fbcfe8" opacity="0.9"/></svg>',
+      // Classic Cherry Blossom Emoji
+      '<span class="select-none inline-block filter drop-shadow-[0_2px_4px_rgba(244,114,182,0.35)]">🌸</span>'
+    ];
+
+    // 2. Special Occasional Flowers (Bunga Gerbera & Bunga Carnation)
+    const specialFlowerSVGs = [
+      // Bunga Gerbera Daisy (Radiating layered petals with golden disc center)
+      '<svg viewBox="0 0 36 36" width="100%" height="100%"><g><g fill="#fb7185"><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(30 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(60 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(90 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(120 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(150 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(180 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(210 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(240 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(270 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(300 18 18)"/><path d="M18 18 C17.2 11 16.6 4 18 1.5 C19.4 4 18.8 11 18 18 Z" transform="rotate(330 18 18)"/></g><g fill="#fda4af"><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(15 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(45 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(75 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(105 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(135 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(165 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(195 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(225 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(255 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(285 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(315 18 18)"/><path d="M18 18 C17.3 12 16.8 5 18 3 C19.2 5 18.7 12 18 18 Z" transform="rotate(345 18 18)"/></g><circle cx="18" cy="18" r="4.2" fill="#f43f5e"/><circle cx="18" cy="18" r="2.8" fill="#d97706"/><circle cx="18" cy="18" r="1.5" fill="#78350f"/></g></svg>',
+      // Bunga Carnation Anyelir (Deep Romantic Crimson layered frilled ruffles)
+      '<svg viewBox="0 0 36 36" width="100%" height="100%"><g><path d="M18 5 C14 3 10 5.5 8 9 C5 11 4.5 15 6.5 18.5 C5 22 7 26 10.5 28 C14 30 18 30 21.5 28.5 C25 30 29 27.5 30 24 C32 20 31.5 16 29 13 C31 9.5 28.5 6 25 5 C21.5 3.5 19.5 4.5 18 5 Z" fill="#e11d48" opacity="0.95"/><path d="M18 8 C15 6.5 11.5 8.5 10 11.5 C8 13.5 8 17 10 19.5 C9 22 10.5 25 13 26 C15.5 27 18 26.5 20.5 25.5 C22.5 26.5 25 24.5 26 22 C27 19.5 26.5 16.5 25 14.5 C26 12 24.5 9.5 22 8.5 C20 7.5 18.5 8 18 8 Z" fill="#f43f5e"/><path d="M18 11 C16 10 13.5 11.5 12.5 13.5 C11.5 15 11.5 17 13 18.5 C14 20 16 20.5 18 20 C20 20.5 22 19.5 23 18 C24 16.5 23.5 14.5 22.5 13 C21.5 11.5 19.5 10.5 18 11 Z" fill="#fb7185"/><path d="M17.5 13.5 C16 13 14.5 14 14.5 15.5 C14 16.5 15 17.5 16 18 C17 18.5 18 18.5 19 17.5 C20 17 20 15.5 19.5 14.5 C19 13.5 18 13.5 17.5 13.5 Z" fill="#fda4af"/></g></svg>',
+      // Bunga Carnation Anyelir (Soft Rose Pink layered ruffles)
+      '<svg viewBox="0 0 36 36" width="100%" height="100%"><g><path d="M18 5 C14 3 10 5.5 8 9 C5 11 4.5 15 6.5 18.5 C5 22 7 26 10.5 28 C14 30 18 30 21.5 28.5 C25 30 29 27.5 30 24 C32 20 31.5 16 29 13 C31 9.5 28.5 6 25 5 C21.5 3.5 19.5 4.5 18 5 Z" fill="#f43f5e" opacity="0.95"/><path d="M18 8 C15 6.5 11.5 8.5 10 11.5 C8 13.5 8 17 10 19.5 C9 22 10.5 25 13 26 C15.5 27 18 26.5 20.5 25.5 C22.5 26.5 25 24.5 26 22 C27 19.5 26.5 16.5 25 14.5 C26 12 24.5 9.5 22 8.5 C20 7.5 18.5 8 18 8 Z" fill="#fb7185"/><path d="M18 11 C16 10 13.5 11.5 12.5 13.5 C11.5 15 11.5 17 13 18.5 C14 20 16 20.5 18 20 C20 20.5 22 19.5 23 18 C24 16.5 23.5 14.5 22.5 13 C21.5 11.5 19.5 10.5 18 11 Z" fill="#fbcfe8"/><path d="M17.5 13.5 C16 13 14.5 14 14.5 15.5 C14 16.5 15 17.5 16 18 C17 18.5 18 18.5 19 17.5 C20 17 20 15.5 19.5 14.5 C19 13.5 18 13.5 17.5 13.5 Z" fill="#fff1f2"/></g></svg>'
+    ];
+
+    function createSakuraPetal(initialY = -40) {
+      if (!sakuraContainer) return;
+      if (sakuraContainer.children.length >= MAX_PETALS) return;
+
+      const petal = document.createElement('div');
+      petal.className = 'sakura-petal';
+
+      // 18% chance for rare Gerbera or Carnation flower, 82% for Sakura
+      const isSpecial = Math.random() < 0.18;
+      let randomContent;
+      let size;
+
+      if (isSpecial) {
+        randomContent = specialFlowerSVGs[Math.floor(Math.random() * specialFlowerSVGs.length)];
+        size = Math.floor(Math.random() * 8) + 24; // 24px to 32px (slightly larger and special!)
+      } else {
+        randomContent = sakuraPetalSVGs[Math.floor(Math.random() * sakuraPetalSVGs.length)];
+        size = Math.floor(Math.random() * 12) + 16; // 16px to 28px
+      }
+
+      const leftPos = Math.random() * 100; // 0% to 100% viewport width
+      const duration = (Math.random() * 5 + 4).toFixed(2); // 4s to 9s
+      const sway = (Math.random() * 80 - 40).toFixed(0); // -40px to +40px horizontal sway
+      const opacity = (Math.random() * 0.35 + 0.6).toFixed(2); // 0.60 to 0.95
+
+      petal.style.width = `${size}px`;
+      petal.style.height = `${size}px`;
+      petal.style.left = `${leftPos}%`;
+      petal.style.top = `${initialY}px`;
+      petal.style.animationDuration = `${duration}s`;
+      petal.style.setProperty('--sway-x', `${sway}px`);
+      petal.style.setProperty('--petal-opacity', opacity);
+
+      petal.innerHTML = randomContent;
+
+      sakuraContainer.appendChild(petal);
+
+      // Clean up after animation duration
+      setTimeout(() => {
+        if (petal.parentNode === sakuraContainer) {
+          sakuraContainer.removeChild(petal);
+        }
+      }, duration * 1000);
+    }
+
+    // Prepopulate initial screen so petals are already visibly floating smoothly on load
+    for (let i = 0; i < 18; i++) {
+      createSakuraPetal(Math.random() * window.innerHeight * 0.85);
+    }
+
+    // High frequency interval (every 320ms) to ensure continuous, rich, romantic flower fall
+    setInterval(() => {
+      createSakuraPetal(-30);
+    }, 320);
+
+    // 3. Interactive Celebration Button & Particle Emitter
+    const btnCelebrate = document.getElementById('btn-celebrate');
+    const heroHeart = document.getElementById('hero-heart-badge');
+    const reactionCountEl = document.getElementById('reaction-count');
+    const particleContainer = document.getElementById('heart-burst-container');
+
+    let reactions = 128;
+
+    function triggerHeartBurst(originX, originY) {
+      if (!particleContainer) return;
+
+      const icons = ['💖', '🌸', '✨', '💕', '🌷', '❤️'];
+      const count = 16;
+
+      for (let i = 0; i < count; i++) {
+        const particle = document.createElement('div');
+        particle.textContent = icons[Math.floor(Math.random() * icons.length)];
+        particle.className = 'absolute pointer-events-none select-none text-xl transition-all duration-1000 ease-out';
+        
+        const startX = originX || (window.innerWidth / 2);
+        const startY = originY || (window.innerHeight / 2);
+
+        particle.style.left = `${startX}px`;
+        particle.style.top = `${startY}px`;
+        particle.style.opacity = '1';
+        particle.style.transform = 'scale(0.5) translate(-50%, -50%)';
+
+        particleContainer.appendChild(particle);
+
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = 90 + Math.random() * 130;
+        const targetX = Math.cos(angle) * velocity;
+        const targetY = Math.sin(angle) * velocity - 60; // slight upward drift
+        const targetRotation = (Math.random() - 0.5) * 140;
+
+        requestAnimationFrame(() => {
+          particle.style.transform = `translate(calc(-50% + ${targetX}px), calc(-50% + ${targetY}px)) scale(${1 + Math.random() * 0.6}) rotate(${targetRotation}deg)`;
+          particle.style.opacity = '0';
+        });
+
+        setTimeout(() => {
+          if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+          }
+        }, 1100);
+      }
+    }
+
+    if (btnCelebrate) {
+      btnCelebrate.addEventListener('click', (e) => {
+        reactions++;
+        if (reactionCountEl) reactionCountEl.textContent = reactions;
+        const rect = btnCelebrate.getBoundingClientRect();
+        triggerHeartBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      });
+    }
+
+    if (heroHeart) {
+      heroHeart.addEventListener('click', (e) => {
+        const rect = heroHeart.getBoundingClientRect();
+        triggerHeartBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      });
+    }
+
+    // 4. Interactive Love Letter Real Envelope Logic
+    const envelopeWrapper = document.getElementById('envelope-wrapper');
+    const topFlap = document.getElementById('envelope-top-flap');
+    const waxSeal = document.getElementById('envelope-wax-seal');
+    const slidingLetter = document.getElementById('envelope-sliding-letter');
+    const envelopeInstruction = document.getElementById('envelope-instruction');
+    const envelopeOpenedLetter = document.getElementById('envelope-opened-letter');
+    const btnFoldLetter = document.getElementById('btn-fold-letter');
+
+    let isOpening = false;
+    let isClosing = false;
+
+    if (envelopeWrapper && envelopeOpenedLetter) {
+      envelopeWrapper.addEventListener('click', (e) => {
+        if (isOpening || isClosing) return;
+        isOpening = true;
+
+        const rect = envelopeWrapper.getBoundingClientRect();
+        const clickX = e.clientX || (rect.left + rect.width / 2);
+        const clickY = e.clientY || (rect.top + rect.height / 2);
+        triggerHeartBurst(clickX, clickY);
+
+        // Stage 1: Hide instruction text
+        if (envelopeInstruction) envelopeInstruction.style.opacity = '0';
+
+        // Stage 2: Wax seal breaks / fades out (preserving translateX(-50%))
+        if (waxSeal) {
+          waxSeal.style.transform = 'translateX(-50%) translateY(-10px) scale(1.4)';
+          waxSeal.style.opacity = '0';
+        }
+
+        // Stage 3: Flap unfolds upward 180deg
+        setTimeout(() => {
+          if (topFlap) {
+            topFlap.style.transform = 'rotateX(180deg)';
+            topFlap.style.zIndex = '5';
+          }
+        }, 120);
+
+        // Stage 4: Letter slides up out of envelope pocket
+        setTimeout(() => {
+          if (slidingLetter) {
+            slidingLetter.style.opacity = '1';
+            slidingLetter.style.transform = 'translateY(-75%) scale(1.03)';
+          }
+        }, 450);
+
+        // Stage 5: Transition to full opened scrapbook letter view
+        setTimeout(() => {
+          envelopeWrapper.style.transition = 'all 0.4s ease-out';
+          envelopeWrapper.style.opacity = '0';
+          envelopeWrapper.style.transform = 'scale(0.96)';
+
+          setTimeout(() => {
+            envelopeWrapper.classList.add('hidden');
+            envelopeOpenedLetter.classList.remove('hidden');
+
+            requestAnimationFrame(() => {
+              envelopeOpenedLetter.classList.remove('opacity-0', 'scale-95');
+              envelopeOpenedLetter.classList.add('opacity-100', 'scale-100');
+              isOpening = false;
+            });
+          }, 350);
+        }, 1050);
+      });
+
+      if (btnFoldLetter) {
+        btnFoldLetter.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (isOpening || isClosing) return;
+          isClosing = true;
+
+          const rect = btnFoldLetter.getBoundingClientRect();
+          triggerHeartBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+
+          // 1. Fade out the expanded opened letter card
+          envelopeOpenedLetter.classList.remove('opacity-100', 'scale-100');
+          envelopeOpenedLetter.classList.add('opacity-0', 'scale-95');
+
+          setTimeout(() => {
+            envelopeOpenedLetter.classList.add('hidden');
+
+            // 2. Prepare envelope in the "open with letter pulled out" state instantly
+            if (topFlap) {
+              topFlap.style.transition = 'none';
+              topFlap.style.transform = 'rotateX(180deg)';
+              topFlap.style.zIndex = '5';
+            }
+            if (waxSeal) {
+              waxSeal.style.transition = 'none';
+              waxSeal.style.opacity = '0';
+              waxSeal.style.transform = 'translateX(-50%) translateY(-10px) scale(1.4)';
+            }
+            if (slidingLetter) {
+              slidingLetter.style.transition = 'none';
+              slidingLetter.style.opacity = '1';
+              slidingLetter.style.transform = 'translateY(-75%) scale(1.03)';
+            }
+            if (envelopeInstruction) {
+              envelopeInstruction.style.transition = 'none';
+              envelopeInstruction.style.opacity = '0';
+            }
+
+            envelopeWrapper.style.transition = 'none';
+            envelopeWrapper.style.opacity = '1';
+            envelopeWrapper.style.transform = 'scale(1)';
+            envelopeWrapper.classList.remove('hidden');
+
+            // Force reflow so browsers apply the un-animated setup
+            void envelopeWrapper.offsetHeight;
+
+            // 3. Restore smooth animation transitions
+            if (topFlap) topFlap.style.transition = 'all 0.65s cubic-bezier(0.4, 0, 0.2, 1)';
+            if (waxSeal) waxSeal.style.transition = 'all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            if (slidingLetter) slidingLetter.style.transition = 'all 0.65s cubic-bezier(0.4, 0, 0.2, 1)';
+            if (envelopeInstruction) envelopeInstruction.style.transition = 'opacity 0.4s ease-in-out';
+            envelopeWrapper.style.transition = '';
+
+            // 4. ANIMASI 1: Kertas meluncur masuk kembali ke dalam saku amplop
+            setTimeout(() => {
+              if (slidingLetter) {
+                slidingLetter.style.transform = 'translateY(0) scale(1)';
+              }
+            }, 80);
+
+            // 5. ANIMASI 2: Setelah kertas masuk, flap penutup atas melipat turun menutup saku
+            setTimeout(() => {
+              if (topFlap) {
+                topFlap.style.zIndex = '30';
+                topFlap.style.transform = 'rotateX(0deg)';
+              }
+            }, 720);
+
+            // 6. ANIMASI 3: Stempel lilin (wax seal) muncul kembali mengunci amplop dengan efek pop
+            setTimeout(() => {
+              if (waxSeal) {
+                waxSeal.style.opacity = '1';
+                waxSeal.style.transform = 'translateX(-50%) translateY(0) scale(1)';
+              }
+              const sealRect = waxSeal ? waxSeal.getBoundingClientRect() : null;
+              if (sealRect) {
+                triggerHeartBurst(sealRect.left + sealRect.width / 2, sealRect.top + sealRect.height / 2);
+              }
+            }, 1250);
+
+            // 7. ANIMASI 4: Kertas disembunyikan dan teks instruksi muncul kembali
+            setTimeout(() => {
+              if (slidingLetter) {
+                slidingLetter.style.opacity = '0';
+              }
+              if (envelopeInstruction) {
+                envelopeInstruction.style.opacity = '1';
+              }
+              isClosing = false;
+            }, 1600);
+          }, 300);
+        });
+      }
+    }
+
+  })();
+</script></main></body></html>
