@@ -1,0 +1,9 @@
+# SSL Certificates
+*.pem
+*.key
+*.crt
+
+# Temporary & backup files
+*.old
+.DS_Store
+Thumbs.db
