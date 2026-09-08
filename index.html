@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Quicksand:wght@400..700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" as="image" href="foto/thumbelina_bouquet.webp" type="image/webp"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#e4e2de", "surface-container": "#efeeea", "tertiary": "#835200", "background": "#fbf9f5", "outline-variant": "#e1bec6", "on-primary-fixed": "#3f001c", "on-primary": "#ffffff", "on-primary-container": "#fffdff", "primary-fixed": "#ffd9e2", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#653e00", "on-secondary-fixed-variant": "#891933", "surface-variant": "#e4e2de", "on-primary-fixed-variant": "#8e0048", "surface-dim": "#dbdad6", "on-background": "#1b1c1a", "primary-container": "#db2777", "surface-container-lowest": "#ffffff", "outline": "#8d6f77", "inverse-surface": "#30312e", "on-tertiary-fixed": "#2a1700", "on-secondary-container": "#730425", "surface": "#fbf9f5", "on-secondary-fixed": "#400010", "tertiary-fixed": "#ffddb8", "primary": "#b7005e", "inverse-on-surface": "#f2f0ed", "on-surface-variant": "#594047", "on-error-container": "#93000a", "secondary-container": "#fe7488", "secondary-fixed": "#ffdadc", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#ffb95f", "primary-fixed-dim": "#ffb1c7", "error-container": "#ffdad6", "on-surface": "#1b1c1a", "tertiary-container": "#a46800", "surface-container-high": "#eae8e4", "secondary-fixed-dim": "#ffb2b9", "secondary": "#a93349", "surface-container-low": "#f5f3ef", "inverse-primary": "#ffb1c7", "on-tertiary-container": "#fffdff", "surface-bright": "#fbf9f5", "on-error": "#ffffff", "surface-tint": "#ba0060" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.75rem", "space-xl": "2rem", "margin-mobile": "1.25rem", "gutter-mobile": "1rem", "space-2xs": "0.25rem", "space-2xl": "3rem", "space-xs": "0.5rem" }, "fontFamily": { "body-lg": ["Quicksand"], "headline-md": ["Playfair Display"], "label-lg": ["Quicksand"], "label-sm": ["Quicksand"], "display-lg-mobile": ["Playfair Display"], "display-lg": ["Playfair Display"], "title-script": ["Playfair Display"], "body-sm": ["Quicksand"], "body-md": ["Quicksand"], "headline-lg": ["Playfair Display"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "0", "fontWeight": "500" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "title-script": ["20px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "0", "fontWeight": "600" }] } } } };</script>
 <style>
@@ -116,13 +117,13 @@
   </div>
 </div>
 <!-- ===== Thumbelina Flower Bouquet Modal ("Nih Buat Kamuu") ===== -->
-<div id="thumbelina-bouquet-modal" class="fixed inset-0 z-[99997] flex items-center justify-center p-4 bg-black/55 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-500 cursor-pointer select-none">
+<div id="thumbelina-bouquet-modal" class="fixed inset-0 z-[99997] flex items-center justify-center p-4 bg-black/65 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 ease-out cursor-pointer select-none will-change-[opacity] [transform:translateZ(0)]">
   <!-- Glowing soft romantic aura behind flower -->
-  <div class="absolute w-[320px] sm:w-[420px] aspect-square rounded-full bg-gradient-to-tr from-pink-400/40 via-rose-300/30 to-amber-200/25 blur-3xl pointer-events-none animate-pulse" style="animation-duration: 3.5s;"></div>
+  <div class="absolute w-[280px] sm:w-[380px] aspect-square rounded-full bg-gradient-to-tr from-pink-400/35 via-rose-300/25 to-amber-200/20 blur-2xl pointer-events-none animate-pulse will-change-transform [transform:translateZ(0)]" style="animation-duration: 3.5s;"></div>
 
   <!-- Pure Flower Bouquet (Direct on screen, no text, no cards) -->
-  <div id="thumbelina-bouquet-card" class="relative w-full max-w-[340px] sm:max-w-[420px] aspect-square flex items-center justify-center transform scale-90 transition-all duration-500 filter drop-shadow-[0_20px_45px_rgba(0,0,0,0.5)] hover:scale-105">
-    <img src="foto/thumbelina_bouquet.png" alt="Thumbelina Flower Bouquet" class="w-full h-full object-contain pointer-events-none select-none drop-shadow-2xl" />
+  <div id="thumbelina-bouquet-card" class="relative w-full max-w-[340px] sm:max-w-[420px] aspect-square flex items-center justify-center transform scale-90 transition-transform duration-300 ease-out filter drop-shadow-[0_16px_35px_rgba(0,0,0,0.45)] hover:scale-105 will-change-transform [transform:translateZ(0)]">
+    <img src="foto/thumbelina_bouquet.webp" alt="Thumbelina Flower Bouquet" decoding="async" class="w-full h-full object-contain pointer-events-none select-none" />
   </div>
 </div>
 <!-- ===== #7: Scroll Progress Bar ===== -->
@@ -1023,57 +1024,68 @@
     function playMagicChimeSound() {
       try {
         if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
         const ctx = audioCtx;
         const now = ctx.currentTime;
-        const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51]; // C5, E5, G5, C6, E6
+        const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
         notes.forEach((freq, idx) => {
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, now + idx * 0.08);
-          gain.gain.setValueAtTime(0, now + idx * 0.08);
-          gain.gain.linearRampToValueAtTime(0.06, now + idx * 0.08 + 0.02);
-          gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.6);
+          osc.frequency.setValueAtTime(freq, now + idx * 0.07);
+          gain.gain.setValueAtTime(0, now + idx * 0.07);
+          gain.gain.linearRampToValueAtTime(0.05, now + idx * 0.07 + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.07 + 0.45);
           osc.connect(gain);
           gain.connect(ctx.destination);
-          osc.start(now + idx * 0.08);
-          osc.stop(now + idx * 0.08 + 0.65);
+          osc.start(now + idx * 0.07);
+          osc.stop(now + idx * 0.07 + 0.5);
         });
       } catch (e) {}
     }
 
     function triggerFlowerBurst(originX, originY) {
       if (!particleContainer) return;
-      const flowerIcons = ['🌸', '🌷', '🌼', '✨', '💐', '🌺', '💕'];
-      const count = 22;
+      const flowerIcons = ['🌸', '🌷', '✨', '💐', '🌺', '💕'];
+      const count = 10; // Optimized for smooth 60-120 FPS
       const startX = originX || (window.innerWidth / 2);
       const startY = originY || (window.innerHeight / 2);
+      const frag = document.createDocumentFragment();
+      const particles = [];
 
       for (let i = 0; i < count; i++) {
         const particle = document.createElement('div');
-        particle.textContent = flowerIcons[Math.floor(Math.random() * flowerIcons.length)];
-        particle.className = 'absolute pointer-events-none select-none text-xl transition-all duration-1000 ease-out';
+        particle.textContent = flowerIcons[i % flowerIcons.length];
+        particle.className = 'absolute pointer-events-none select-none text-xl transition-all duration-700 ease-out will-change-transform';
         particle.style.left = `${startX}px`;
         particle.style.top = `${startY}px`;
         particle.style.opacity = '1';
-        particle.style.transform = 'scale(0.5) translate(-50%, -50%)';
-        particleContainer.appendChild(particle);
+        particle.style.transform = 'translate3d(-50%, -50%, 0) scale(0.6)';
+        frag.appendChild(particle);
 
-        const angle = Math.random() * Math.PI * 2;
-        const velocity = 100 + Math.random() * 150;
+        const angle = (i / count) * Math.PI * 2 + (Math.random() * 0.4 - 0.2);
+        const velocity = 80 + Math.random() * 90;
         const targetX = Math.cos(angle) * velocity;
-        const targetY = Math.sin(angle) * velocity - 50;
-        const targetRotation = (Math.random() - 0.5) * 180;
-
-        requestAnimationFrame(() => {
-          particle.style.transform = `translate(calc(-50% + ${targetX}px), calc(-50% + ${targetY}px)) scale(${1 + Math.random() * 0.7}) rotate(${targetRotation}deg)`;
-          particle.style.opacity = '0';
-        });
-
-        setTimeout(() => {
-          if (particle.parentNode) particle.parentNode.removeChild(particle);
-        }, 1100);
+        const targetY = Math.sin(angle) * velocity - 30;
+        const targetRotation = (Math.random() - 0.5) * 120;
+        particles.push({ el: particle, targetX, targetY, targetRotation, scale: 1 + Math.random() * 0.3 });
       }
+      particleContainer.appendChild(frag);
+
+      requestAnimationFrame(() => {
+        particles.forEach(p => {
+          p.el.style.transform = `translate3d(calc(-50% + ${p.targetX}px), calc(-50% + ${p.targetY}px), 0) scale(${p.scale}) rotate(${p.targetRotation}deg)`;
+          p.el.style.opacity = '0';
+        });
+      });
+
+      setTimeout(() => {
+        particles.forEach(p => {
+          if (p.el.parentNode) p.el.parentNode.removeChild(p.el);
+        });
+      }, 750);
     }
 
     function openBouquetModal(e) {
